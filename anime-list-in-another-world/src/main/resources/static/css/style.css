@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css?family=Alice');
+
+*{
+        font-family: Alice;
+        margin: 0;
+		padding: 0;
+		border: 0;
+		vertical-align: baseline;
+}
+/*flex box whole container div*/
+.top{
+
+    width: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+/*Banner*/
+
+#banner {
+		padding: 12em 0 10em 0;
+		background-image: url('../images/isekai3.webp');
+		background-size: cover;
+		background-position: top;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		text-align: center;
+
+	}
+
+		#banner h1 {
+			font-size: 3.5em;
+			font-weight: 100;
+			color: #fff;
+			line-height: 1em;
+			margin: 0 0 0.5em 0;
+			padding: 0;
+		}
+
+		#banner p {
+			font-size: 1em;
+			color: rgba(255, 255, 255, 0.55);
+			margin-bottom: 1.75em;
+		}
+
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+
+			#banner {
+				background-attachment: scroll;
+			}
+
+		}
+
+		@media screen and (max-width: 1280px) {
+
+			#banner {
+				padding: 10em 2em 8em 2em;
+			}
+
+		}
+
+		@media screen and (max-width: 980px) {
+
+			#banner {
+				background-attachment: scroll;
+			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#banner {
+				padding: 8em 1.5em 6em 1.5em;
+			}
+
+				#banner h1 {
+					font-size: 2.5em;
+				}
+
+				#banner p {
+					font-size: .9em;
+				}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			#banner {
+				padding: 6em 1.5em 4em 1.5em;
+			}
+
+		}
+
+/* Random anime spotlight */
+
+.middleTop{
+    margin-bottom: 150px;
+}
+
+h3{
+
+    color: #1f2937;
+    font-size: 36px;
+    font-weight: bolder;
+    text-align: center;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+
+
+}
+
+.fourbox{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #1f2937;
+
+}
+
+.fourbox img{
+
+    height: 321px;
+    width: 225px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+
+}
+
+.fourbox div{
+    margin: 20px;
+}
+
+/* about us*/
+.about-section {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style the header */
+.about-section h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+/* Create a flexbox layout for the about-content */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Style the about-image */
+.about-image {
+    flex: 1;
+    padding-right: 20px;
+    max-width: 400px;
+}
+
+.about-image img {
+    max-width: 100%;
+    display: block;
+    width: 300px;
+    height: 500px;
+}
+
+/* Style the about-text */
+.about-text {
+    flex: 2;
+    font-size: 16px;
+    color: #555;
+    padding-right: 300px;
+    padding-bottom: 200px;
+    text-align: center;
+}
+/* login page */
+
+.login-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.loginWrapper{
+    width: 420px;
+    background: #D3D3D3;
+    border-radius: 15px;
+    padding: 30px 40px;
+    opacity: 0.7;
+}
+
+#emailHelp{
+    text-align:center;
+}
+
+.loginWrapper h1{
+    font-size: 32px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.loginWrapper .loginInput{
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.loginInput input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255,255,255, .2);
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 20px 45px 20px 20px;
+}
+
+.loginInput input::placeholder{
+    /*color: #fff;*/
+}
+
+.forgot{
+text-align: center;
+}
+
+.forgot a{
+    color: #1f2937;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.forgot a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+
+.forgot .error{
+    color:red;
+}
+
+.registerAcc{
+    justify-content: center;
+    text-align: center;
+}
+
+#btn-login{
+    background-color: #212529;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-color: #212529;
+}
+
+
+
+
+
+/* login page images */
+.login-loading{
+
+    background-image: url("../images/login3.jpg");
+    background-size: 20%;
+    opacity: 0.3;
+    height: 400px;
+    width: 100%;
+    background-repeat: repeat-x;
+
+}
+
+/* Set the max-width of the about-text on smaller screens */
+@media screen and (max-width: 768px) {
+    .about-text {
+        max-width: 100%;
+    }
+}
+
+/* profile*/
+.profile{
+
+    background-repeat: none;
+}
+
+.guild-card {
+    width: 563px;
+    height: 312px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 9px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-image: url("../images/back2.PNG");
+    background-size: 100%;
+    padding-left: 50px;
+}
+
+/* Style the guild-card-image */
+.guild-card-image {
+    flex: 1;
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 40px;
+
+}
+
+.guild-card-image img {
+    width: 150px;
+    height: 175px;
+    border-radius: 2px;
+    border: 2px solid #ddd;
+}
+
+/* Style the guild-card-info */
+.guild-card-info {
+    flex: 2;
+    font-size: 16px;
+    color: #555;
+    margin-right: 60px;
+    margin-bottom: 10px;
+
+}
+
+.guild-card-info h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #8d825f;
+    margin-bottom: 12px;
+}
+
+.guild-card-info p {
+    margin-bottom: 7px;
+    text-align: center;
+}
+
+#total-watched,
+#total-watching,
+#total-planning,
+#total-watchlist,
+#rank {
+    font-weight: bold;
+    color: #8d825f;
+}
+
+/* nav bar scroll js call*/
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .top {
+  padding-top: 60px;
+}
+
+.footer{
+
+    background-color: #1f2937;
+    padding: 40px;
+    text-align: center;
+
+}
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>AnimeList in Another World</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" th:href="@{/css/style.css?version=51}">
+  <link rel="stylesheet" th:href="@{/css/table.css?version=51}">
+  <link rel="icon" type="image/x-icon" th:href="@{/images/favicon.png}">
+</head>
+<body class="profile">
+
+<!-- NavBar -->
+<nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/index}">Anөtheг Wөгld</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" th:href="@{/index}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" th:href="@{/profile}">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/search}">Search</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/index#about-part}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/randomAnime}">¿?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Quizzes</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Anime Name" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="space">
+
+  <p th:if="${empty}">NO ANIME FOUND IN YOUR LIST</p>
+
+</div>
+
+<h1 style="text-align: center;">ANIME LIST</h1>
+
+
+
+
+<div class="theTable">
+  <table class="content-table">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Anime Name</th>
+      <th>Status</th>
+      <th>Episodes</th>
+      <th>Watch Status</th>
+      <th>Remove</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="animeDetails : ${animeDetailsList}">
+      <td><img th:src="${animeDetails.anime.images?.jpg?.imageUrl}" alt="Anime Image" width="150px" height="200px"></td>
+      <td><a th:href="@{/getSelectedAnime/{malId}(malId=${animeDetails.malId})}" th:text="${animeDetails.anime?.title}"></a></td>
+      <td th:text="${animeDetails.anime?.airing ? 'Airing' : 'Finished Airing'}"></td>
+      <td th:text="${animeDetails.anime?.episodes}"></td>
+      <td th:text="${animeDetails.watchStatus}"></td>
+
+      <td>
+      <form th:action="@{/deleteAnimeFromList}" method="post" class="hideThis">
+        <input type="hidden" name="id" th:value="${animeDetails.animeId}" th:type="number" th:name="id" id="id" class="thisOne"/>
+        <button class="btn btn-outline-danger" type="submit">Delete</button>
+      </form>
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="footer">
+  <a href="https://github.com/rafirafi2"><img src="../images/github-mark-white.svg" width="30" height="30" alt="github cat"></a>
+  <p>Istiaque Rafi</p>
+</div>
+
+
+
+
+</body>
+</html>
